@@ -1,0 +1,345 @@
+@import "tailwindcss";
+
+/*
+ * Monitizee design tokens, taken from the logo: sky (#60BFEF) falling into azure (#0396FB), on white.
+ * Dark panels are deeper shades of the same blue. Type: Plus Jakarta Sans + Pacifico accents.
+ */
+
+:root {
+  --background: #ffffff;
+  --surface: #f3f9fe;
+  --surface-2: #e8f4fd;
+  --foreground: #0b2a4a;
+  --muted-foreground: #4d6683;
+
+  --primary: #0396fb;
+  --primary-foreground: #ffffff;
+
+  --accent: #0396fb;
+  --accent-hover: #0a6fc2;
+  --accent-soft: #e3f2fe;
+
+  /* logo gradient ends */
+  --brand-sky-top: #60bfef;
+  --brand-blue: #0396fb;
+  /* highlight on deep-blue panels, chips on white */
+  --brand-sky: #9fd8fb;
+  --brand-sky-soft: #e3f2fe;
+  --brand-blue-deep: #0a6fc2;
+  /* earnings */
+  --brand-green: #22c55e;
+  --brand-green-soft: #bbf7d0;
+
+  --border: #dbe9f6;
+  --border-strong: #c2d8ec;
+  --ring: #0a6fc2;
+
+  --ink: #0757a8;
+  --ink-surface: #0f6cc4;
+  --ink-foreground: #ffffff;
+  --ink-muted: #cfe7fb;
+  --ink-border: rgb(255 255 255 / 18%);
+
+  --header-h: 5rem;
+  --nav-h: 5rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-foreground: var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-soft);
+  --color-brand-sky-top: var(--brand-sky-top);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-sky: var(--brand-sky);
+  --color-brand-sky-soft: var(--brand-sky-soft);
+  --color-brand-blue-deep: var(--brand-blue-deep);
+  --color-brand-green: var(--brand-green);
+  --color-brand-green-soft: var(--brand-green-soft);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-ring: var(--ring);
+  --color-ink: var(--ink);
+  --color-ink-surface: var(--ink-surface);
+  --color-ink-foreground: var(--ink-foreground);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-border: var(--ink-border);
+
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-script: var(--font-pacifico), cursive;
+
+  --shadow-soft: 0 1px 2px rgb(7 60 120 / 0.05), 0 10px 30px -18px rgb(7 60 120 / 0.35);
+  --shadow-lift: 0 1px 2px rgb(7 60 120 / 0.06), 0 30px 60px -30px rgb(7 60 120 / 0.5);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: var(--nav-h);
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--brand-blue);
+    color: white;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+@layer components {
+  /* Fluid type scale */
+  .t-display {
+    font-size: clamp(2.7rem, 1.5rem + 4.8vw, 5.5rem);
+    line-height: 1.04;
+    letter-spacing: -0.04em;
+    font-weight: 600;
+  }
+  .t-h1 {
+    font-size: clamp(2.2rem, 1.3rem + 3.6vw, 4.25rem);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+    font-weight: 600;
+  }
+  .t-h2 {
+    font-size: clamp(1.9rem, 1.25rem + 2.4vw, 3.25rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    font-weight: 600;
+  }
+  .t-h3 {
+    font-size: clamp(1.3rem, 1.1rem + 0.7vw, 1.75rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+  }
+  .t-lead {
+    font-size: clamp(1.05rem, 0.98rem + 0.35vw, 1.3rem);
+    line-height: 1.55;
+  }
+
+  /* Script accent words (Pacifico): slightly smaller and lifted so they sit on the sans baseline */
+  .accent-script {
+    font-family: var(--font-script);
+    font-weight: 400;
+    letter-spacing: 0;
+    font-size: 0.9em;
+    line-height: 1;
+    color: var(--brand-blue);
+    padding-inline: 0.04em;
+  }
+  .accent-script[data-tone="sky"] {
+    color: var(--brand-sky);
+  }
+  .accent-script[data-tone="ink"] {
+    color: var(--ink-foreground);
+  }
+
+  /* The logo's own background */
+  .bg-logo {
+    background-image: linear-gradient(180deg, var(--brand-sky-top) 0%, #3baef1 50%, var(--brand-blue) 100%);
+  }
+  /* Deep panels: the same blue, a few shades down */
+  .bg-deep {
+    background-image: linear-gradient(180deg, #0a63bb 0%, var(--ink) 55%, #064c94 100%);
+  }
+
+  .dot-grid {
+    background-image: radial-gradient(circle, rgb(7 60 120 / 0.12) 1px, transparent 1.2px);
+    background-size: 22px 22px;
+  }
+  .dot-grid-ink {
+    background-image: radial-gradient(circle, rgb(255 255 255 / 0.08) 1px, transparent 1.2px);
+    background-size: 22px 22px;
+  }
+
+  .flow-word {
+    will-change: transform, filter, opacity;
+  }
+
+  /* Telegram chat wallpaper inside the phone mockups */
+  .tg-wallpaper {
+    background-color: #cfe8fb;
+    background-image:
+      radial-gradient(circle at 20% 15%, #e6f4ff, transparent 45%),
+      radial-gradient(circle at 85% 70%, #a9d8fa, transparent 50%),
+      radial-gradient(circle, rgb(0 0 0 / 0.05) 1px, transparent 1.3px);
+    background-size: auto, auto, 18px 18px;
+  }
+}
+
+/* CTA plane icon takes off on hover */
+.group\/cta:hover .cta-fly {
+  animation: cta-fly 0.8s var(--ease-out-expo);
+}
+@keyframes cta-fly {
+  45% {
+    transform: translate(140%, -140%);
+    opacity: 0;
+  }
+  46% {
+    transform: translate(-140%, 140%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+/* Small status readouts ease in when their content changes */
+.hero-readout {
+  animation: island-in 0.5s var(--ease-out-expo) both;
+}
+@keyframes island-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+    filter: blur(4px);
+  }
+}
+
+/* Chat bubbles pop in */
+.bubble-in {
+  animation: bubble-in 0.55s var(--ease-out-expo) both;
+}
+@keyframes bubble-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.96);
+  }
+}
+
+/* Coins float up and fade */
+.coin-up {
+  animation: coin-up 1.4s var(--ease-out-expo) both;
+}
+@keyframes coin-up {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.8);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-34px) scale(1);
+  }
+}
+
+/* Live dot */
+.live-dot {
+  animation: live 1.6s ease-in-out infinite;
+}
+@keyframes live {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* FAQ typing indicator */
+.typing-dot {
+  animation: typing 0.9s ease-in-out infinite;
+}
+@keyframes typing {
+  50% {
+    transform: translateY(-3px);
+    opacity: 0.4;
+  }
+}
+
+/* Range slider (earnings calculator) */
+.range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--brand-sky) var(--fill, 50%), rgb(255 255 255 / 0.18) var(--fill, 50%));
+  outline: none;
+  cursor: pointer;
+}
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 1.6rem;
+  width: 1.6rem;
+  border-radius: 999px;
+  background: white;
+  border: 5px solid var(--brand-blue);
+  box-shadow: 0 6px 20px -6px rgb(0 0 0 / 0.5);
+  transition: transform 0.2s var(--ease-out-expo);
+}
+.range::-webkit-slider-thumb:hover {
+  transform: scale(1.12);
+}
+.range::-moz-range-thumb {
+  height: 1.1rem;
+  width: 1.1rem;
+  border-radius: 999px;
+  background: white;
+  border: 5px solid var(--brand-blue);
+}
+.range:focus-visible {
+  outline: 2px solid var(--brand-sky);
+  outline-offset: 6px;
+}
+
+@layer utilities {
+  /* Content hidden until GSAP reveals it. Never hidden for reduced motion or without JS. */
+  html.js-motion [data-reveal] {
+    visibility: hidden;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
