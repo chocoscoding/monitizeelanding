@@ -60,7 +60,7 @@ export const NO_JOINS = {
   tag: "Why it matters",
   titleBefore: "No more “join 5 channels to",
   titleAccent: "unlock.”",
-  lead: "A lot of Telegram content sits behind join-to-unlock gates. To get one file, people end up joining betting, spam and adult groups they never wanted, and their chat list fills with channels they'll never read. Monitizee swaps the forced join for one short ad.",
+  lead: "Join-to-unlock gates push people into betting, spam and adult groups they never wanted. Monitizee swaps the forced join for one short ad.",
   old: {
     label: "The old way",
     prompt: "Join all channels below to unlock 👇",

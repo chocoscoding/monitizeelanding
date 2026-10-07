@@ -1,10 +1,12 @@
 /**
- * Site-wide constants. Confirm `url` and `bot` before launch:
- * the bot username comes from the frontend's NEXT_PUBLIC_BOT_USERNAME fallback.
+ * Site-wide constants. `url` is the one canonical origin every SEO signal points at
+ * (metadata, canonical, sitemap, robots, JSON-LD); the bare domain redirects to it (next.config.ts).
  */
 export const SITE = {
   name: "Monitizee",
-  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://monitizee.com").replace(/\/$/, ""),
+  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.monitizee.xyz").replace(/\/$/, ""),
+  /** The bare domain, permanently redirected to `url`. */
+  apex: "monitizee.xyz",
   title: "Monitizee | Monetize Telegram content with ad-locked links",
   description:
     "Put any Telegram message, photo, video, file or link behind a short ad. Share the link anywhere and earn $0.001 for every view, paid out in USDT on TON. Free to use, no coding.",

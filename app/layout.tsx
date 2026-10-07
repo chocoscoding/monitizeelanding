@@ -51,6 +51,9 @@ export const metadata: Metadata = {
   creator: SITE.name,
   publisher: SITE.name,
   category: "Business",
+  referrer: "origin-when-cross-origin",
+  // Relative URLs below resolve against metadataBase, so canonical, og:url and the social images
+  // all point at the one canonical origin.
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -65,6 +68,11 @@ export const metadata: Metadata = {
     title: SITE.title,
     description: SITE.description,
   },
+  appleWebApp: { capable: true, title: SITE.name, statusBarStyle: "default" },
+  // Set NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION to the Search Console token to verify ownership.
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION && {
+    verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION },
+  }),
   robots: {
     index: true,
     follow: true,

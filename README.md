@@ -10,6 +10,7 @@ npm run build
 ```
 
 ## Before launch
-- Set `NEXT_PUBLIC_SITE_URL` (defaults to `https://monitizee.com`) — used for canonical URLs, sitemap, robots and JSON-LD.
+- Canonical origin is `https://www.monitizee.xyz` (override with `NEXT_PUBLIC_SITE_URL`). It drives canonical URLs, Open Graph, sitemap, robots and JSON-LD (`lib/structured-data.ts`); `monitizee.xyz` 308-redirects to it (`next.config.ts`).
+- Optional: set `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` for Google Search Console.
 - Confirm the bot username in `lib/site.ts` (`SITE.bot`).
 - All copy lives in `lib/content.ts`; rates and payout rules in `lib/site.ts` (`RATES`).
