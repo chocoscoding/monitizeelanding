@@ -51,23 +51,10 @@ export function socialImage() {
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ display: "flex", flexDirection: "column", fontSize: 86, fontWeight: 700, lineHeight: 1.02, letterSpacing: -3.5 }}>
             <div style={{ display: "flex" }}>Every Telegram message,</div>
-            {/* "monetized." with a hand-drawn red underline */}
+            {/* "monetized." with a straight red underline */}
             <div style={{ display: "flex", position: "relative", alignSelf: "flex-start" }}>
               monetized.
-              <svg
-                width="100%"
-                height="26"
-                viewBox="0 0 400 26"
-                preserveAspectRatio="none"
-                style={{ position: "absolute", left: -6, right: -6, bottom: -18 }}>
-                <path
-                  d="M4 18 C 70 8, 150 6, 230 11 S 350 16, 396 9"
-                  fill="none"
-                  stroke="#ef2b2b"
-                  strokeWidth="7"
-                  strokeLinecap="round"
-                />
-              </svg>
+              <div style={{ position: "absolute", left: 0, right: 0, bottom: -2, height: 8.5, borderRadius: 5, background: "#ef2b2b" }} />
             </div>
           </div>
           <div style={{ marginTop: 34, fontSize: 31, color: "rgba(255,255,255,0.9)", maxWidth: 920 }}>
