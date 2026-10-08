@@ -7,7 +7,7 @@ export const SITE = {
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.monitizee.xyz").replace(/\/$/, ""),
   /** The bare domain, permanently redirected to `url`. */
   apex: "monitizee.xyz",
-  title: "Monitizee | Monetize Telegram content with ad-locked links",
+  title: "Monitizee | Monetize anything you can send on Telegram",
   description:
     "Put any Telegram message, photo, video, file or link behind a short ad. Share the link anywhere and earn $0.001 for every view, paid out in USDT on TON. Free to use, no coding.",
   bot: "https://t.me/monitizeebot",
