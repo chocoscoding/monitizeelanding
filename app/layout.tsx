@@ -7,6 +7,7 @@ import { SmoothScroll } from "@/components/motion/SmoothScroll";
 import { SITE } from "@/lib/site";
 
 import "./globals.css";
+import Script from "next/script";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -97,6 +98,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: motionFlag }} />
+        <Script
+          strategy="beforeInteractive"
+          src="https://aromatic-caribou-889.convex.site/api/a/am_xozGonjq8ud91QZ7"
+        />
       </head>
       <body className="min-h-dvh">
         <a
