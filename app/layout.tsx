@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     "pay per view Telegram",
     "Telegram content monetization",
     "make money from Telegram group",
-    "USDT TON payout",
+    "USDT GRAM payout",
     "Telegram mini app ads",
     "content locker Telegram",
     "join to unlock alternative",
