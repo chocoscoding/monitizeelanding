@@ -20,8 +20,8 @@ export const NAV_LINKS = [
 export const HERO = {
   headlineBefore: "Every Telegram message,",
   headlineAccent: "monetized.",
-  lead: "Monitizee puts your message, photo, video, file or link behind one short ad. Share the link anywhere and get paid for every view, in USDT on TON.",
-  proof: ["$0.001 per view", "Works with any message", "USDT payouts on TON", "Free, no coding"],
+  lead: "Monitizee puts your message, photo, video, file or link behind one short ad. Share the link anywhere and get paid for every view, in USDT on GRAM.",
+  proof: ["$0.001 per view", "Works with any message", "USDT payouts on GRAM", "Free, no coding"],
 };
 
 /** The scroll-driven product walkthrough. Bot strings are quoted from the real bot. */
@@ -121,7 +121,7 @@ export const FEATURES = {
       body: "Ad Statistics shows views and earnings for each link, so you know which drops pay best.",
     },
     payouts: {
-      title: "USDT payouts on TON",
+      title: "USDT payouts on GRAM",
       body: `Withdraw to any ${RATES.currency} wallet on the ${RATES.network} network once you reach $${RATES.minPayout}.`,
     },
   },

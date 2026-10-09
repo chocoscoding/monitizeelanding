@@ -426,7 +426,7 @@ function WalletVisual() {
       className="dot-grid absolute inset-0 grid place-items-center">
       <div className="w-56 rounded-2xl border border-border bg-white p-4 shadow-soft">
         <div className="flex items-center justify-between">
-          <span className="text-[0.72rem] font-semibold tracking-[0.14em] text-muted-foreground uppercase">USDT · TON</span>
+          <span className="text-[0.72rem] font-semibold tracking-[0.14em] text-muted-foreground uppercase">USDT · GRAM</span>
           <span className="grid h-7 w-7 place-items-center rounded-full bg-[#26a17b] text-[0.8rem] font-bold text-white">₮</span>
         </div>
         <p className="mt-2 text-[1.8rem] font-semibold tracking-[-0.04em] tabular-nums">$11.042</p>

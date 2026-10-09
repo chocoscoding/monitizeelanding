@@ -63,7 +63,7 @@ export function socialImage() {
         </div>
 
         <div style={{ display: "flex", gap: 14 }}>
-          {["$0.001 per view", "USDT on TON", "Free · no coding"].map((t, i) => (
+          {["$0.001 per view", "USDT on GRAM", "Free · no coding"].map((t, i) => (
             <div
               key={t}
               style={{

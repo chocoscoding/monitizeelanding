@@ -1,6 +1,6 @@
 # Monitizee landing page
 
-Marketing site for [Monitizee](https://t.me/monitizeebot): lock any Telegram message behind a short ad and earn $0.001 per view, paid in USDT on TON.
+Marketing site for [Monitizee](https://t.me/monitizeebot): lock any Telegram message behind a short ad and earn $0.001 per view, paid in USDT on GRAM.
 
 Design system and motion vocabulary follow the 4points landing (Next.js 16, Tailwind v4, GSAP + ScrollTrigger/SplitText, Lenis).
 

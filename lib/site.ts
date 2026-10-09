@@ -9,7 +9,7 @@ export const SITE = {
   apex: "monitizee.xyz",
   title: "Monitizee | Monetize anything you can send on Telegram",
   description:
-    "Put any Telegram message, photo, video, file or link behind a short ad. Share the link anywhere and earn $0.001 for every view, paid out in USDT on TON. Free to use, no coding.",
+    "Put any Telegram message, photo, video, file or link behind a short ad. Share the link anywhere and earn $0.001 for every view, paid out in USDT on GRAM. Free to use, no coding.",
   bot: "https://t.me/monitizeebot",
   botHandle: "@monitizeebot",
   locale: "en_US",
@@ -21,5 +21,5 @@ export const RATES = {
   minPayout: 11,
   payoutWindow: "24–48 hours",
   currency: "USDT",
-  network: "TON",
+  network: "GRAM",
 } as const;
